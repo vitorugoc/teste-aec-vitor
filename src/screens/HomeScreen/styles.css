@@ -1,4 +1,4 @@
-.products_wrapper {
+.products__wrapper {
     display: flex;
     flex-wrap: wrap;
     max-width: 1024px;
