@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots": ["./typings", "./node_modules/@types"],
     "target": "es5",
     "types": ["node", "uuid"],
     "lib": [
@@ -22,6 +23,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "./"
   ]
 }
