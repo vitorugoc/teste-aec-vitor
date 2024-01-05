@@ -23,7 +23,7 @@
     margin: 20px 0;
 }
 
-.ProductCard__button {
+.productCard__button {
     padding: 6px 10px;
     cursor: pointer;
     border-radius: 25px;
@@ -32,14 +32,14 @@
     transition: all 0.2s ease-in;
 }
 
-.ProductCard__button:hover {
+.productCard__button:hover {
     color: white;
     background-color: #f1b668;
     transform: translate(2px, -2px);
 }
 
-.ProductCard__button:focus,
-.ProductCard__button:active {
+.productCard__button:focus,
+.productCard__button:active {
     outline: none;
 }
 

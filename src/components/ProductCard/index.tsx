@@ -16,6 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                 <div>
                     <h5>{formatCurrency(product.price)}</h5>
                 </div>
+                <button className="productCard__button">Adicionar ao carrinho</button>
             </div>
         </div>
     );
