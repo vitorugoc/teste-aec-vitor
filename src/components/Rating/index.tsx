@@ -22,6 +22,7 @@ const Rating: React.FC<RatingProps> = ({ value, text, color }) => {
                     </i>
                 </span>
             ))}
+        <span>{text && text}</span>
         </div>
     );
 };
