@@ -23,7 +23,7 @@ interface Product {
       image:
         "https://images.unsplash.com/photo-1585298723682-7115561c51b7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8aGVhZHBob25lc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       price: 150.99,
-      rating: 4.0,
+      rating: 0.5,
       numReviews: 8,
     },
     {
