@@ -3,12 +3,19 @@ import "./styles.css"
 import formatCurrency from "../../utils/formatCurrency";
 import { Product } from "../../data";
 import Rating from "../Rating";
+import { useCart } from "../../context/cart/CartContext";
 
 interface ProductCardProps {
     product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+      addToCart(product);
+    };
+  
     return (
         <div className="productCard__wrapper">
             <div>
@@ -24,7 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                         color="#FFA41C"
                     />
                 </div>
-                <button className="productCard__button">Adicionar ao carrinho</button>
+                <button className="productCard__button" onClick={handleAddToCart}>Adicionar ao carrinho</button>
             </div>
         </div>
     );
