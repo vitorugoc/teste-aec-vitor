@@ -1,5 +1,5 @@
 import "./styles.css"
-import { useCart } from "../../context/cart/CartContext";
+import { useCart } from "../../hooks/cart/useCart";
 
 interface NavProps {
 

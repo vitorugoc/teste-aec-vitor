@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useReducer } from "react";
+import { createContext, ReactNode, useReducer } from "react";
 import CartReducer from "./CartReducer";
 
 import { Product } from "../../data";
@@ -12,14 +12,7 @@ interface CartContextProps {
   removeItem: (id: number) => void;
 }
 
-const CartContext = createContext<CartContextProps | undefined>(undefined);
-
-
-export const useCart = () => {
-  const context = useContext(CartContext);
-  return context || { showCart: false, cartItems: [], addToCart: () => {}, showHideCart: () => {}, removeItem: () => {} };
-};
-
+export const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const initialState: CartContextProps = {

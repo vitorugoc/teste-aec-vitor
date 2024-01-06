@@ -3,7 +3,7 @@ import "./styles.css"
 import formatCurrency from "../../utils/formatCurrency";
 import { Product } from "../../data";
 import Rating from "../Rating";
-import { useCart } from "../../context/cart/CartContext";
+import { useCart } from "../../hooks/cart/useCart";
 
 interface ProductCardProps {
     product: Product;
