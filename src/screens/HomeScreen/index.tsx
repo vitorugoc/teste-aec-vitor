@@ -11,7 +11,7 @@ interface HomeScreenProps {
 
 const HomeScreen: React.FC<HomeScreenProps> = () => {
   return (
-    <div>
+    <div className="products__wrapper">
       {products.map((product: Product) => (
         <ProductCard
           key={product._id}
