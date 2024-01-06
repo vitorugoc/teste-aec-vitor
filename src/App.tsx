@@ -7,8 +7,8 @@ import CartProvider from './context/cart/CartContext';
 function App() {
   return (
     <div className="App">
-      <Nav />
       <CartProvider>
+        <Nav />
         <HomeScreen />
       </CartProvider>
     </div>
