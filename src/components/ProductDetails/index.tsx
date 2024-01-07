@@ -10,7 +10,7 @@ interface ProductDetailsProps {
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     const { addToCart } = useCart();
-    const { isModalOpen, setIsModalOpen } = useDetailsModal();
+    const { isModalOpen, changeDetailModalVisibility } = useDetailsModal();
 
     const handleAddToCart = () => {
         addToCart(product);
@@ -20,9 +20,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     return (
         <>
             {isModalOpen && (
-                <div className="modal__Overlay" onClick={setIsModalOpen}>
+                <div className="modal__Overlay" onClick={changeDetailModalVisibility}>
                     <div className="modal__Content" onClick={(e) => e.stopPropagation()}>
-                        <span className="closeButton" onClick={setIsModalOpen}>
+                        <span className="closeButton" onClick={changeDetailModalVisibility}>
                             &times;
                         </span>
                         <h2>{product.name}</h2>

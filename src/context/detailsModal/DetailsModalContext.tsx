@@ -1,11 +1,11 @@
 import { createContext, ReactNode, useReducer } from "react";
 
-import { SET_IS_MODAL_OPEN } from "../Types";
+import { CHANGE_DETAIL_MODAL_VISIBILITY } from "../Types";
 import DetailsModalReducer from "./DetailsModalReducer";
 
 interface DetailsModalContextProps {
   isModalOpen: boolean;
-  setIsModalOpen: () => void;
+  changeDetailModalVisibility: () => void;
 }
 
 export const DetailsModalContext = createContext<DetailsModalContextProps | undefined>(undefined);
@@ -13,20 +13,20 @@ export const DetailsModalContext = createContext<DetailsModalContextProps | unde
 const DetailsModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const initialState: DetailsModalContextProps = {
     isModalOpen: false,
-    setIsModalOpen: () => {},
+    changeDetailModalVisibility: () => {},
   };
 
   const [state, dispatch] = useReducer(DetailsModalReducer, initialState);
 
-  const setIsModalOpen = (): void => {
-    dispatch({ type: SET_IS_MODAL_OPEN });
+  const changeDetailModalVisibility = (): void => {
+    dispatch({ type: CHANGE_DETAIL_MODAL_VISIBILITY });
   };
 
   return (
     <DetailsModalContext.Provider
       value={{
         isModalOpen: state.isModalOpen,
-        setIsModalOpen,
+        changeDetailModalVisibility,
       }}
     >
       {children}

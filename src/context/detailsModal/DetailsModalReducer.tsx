@@ -1,16 +1,16 @@
-import { SET_IS_MODAL_OPEN } from "../Types";
+import { CHANGE_DETAIL_MODAL_VISIBILITY } from "../Types";
 
 interface DetailsModalState {
   isModalOpen: boolean;
 }
 
 type DetailsModalAction =
-  | { type: typeof SET_IS_MODAL_OPEN;}
+  | { type: typeof CHANGE_DETAIL_MODAL_VISIBILITY;}
 
 
 const DetailsModalReducer = (state: DetailsModalState, action: DetailsModalAction): DetailsModalState => {
   switch (action.type) {
-    case SET_IS_MODAL_OPEN:
+    case CHANGE_DETAIL_MODAL_VISIBILITY:
       return {
         ...state,
         isModalOpen: !state.isModalOpen,

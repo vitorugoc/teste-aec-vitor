@@ -4,5 +4,5 @@ import { DetailsModalContext } from "../../context/detailsModal/DetailsModalCont
 
 export const useDetailsModal = () => {
     const context = useContext(DetailsModalContext);
-    return context || {isModalOpen: "", setIsModalOpen: () => {},};
+    return context || {isModalOpen: "", changeDetailModalVisibility: () => {},};
 };

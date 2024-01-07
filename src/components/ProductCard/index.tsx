@@ -12,7 +12,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const { addToCart } = useCart();
-    const { setIsModalOpen } = useDetailsModal();
+    const { changeDetailModalVisibility } = useDetailsModal();
 
     const handleAddToCart = () => {
         addToCart(product);
@@ -20,7 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
     return (
         <div className="productCard__wrapper">
-            <div style={{cursor: "pointer"}} onClick={setIsModalOpen}>
+            <div style={{cursor: "pointer"}} onClick={changeDetailModalVisibility}>
                 <img className="productCard__img" src={product.image} alt="" />
                 <h4>{product.name}</h4>
                 <div>
