@@ -1,13 +1,12 @@
 import { createContext, ReactNode, useReducer } from "react";
-import CartReducer from "./CartReducer";
+import CartReducer, { CartProduct } from "./CartReducer";
 
-import { Product } from "../../data";
 import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM } from "../Types";
 
 interface CartContextProps {
   showCart: boolean;
-  cartItems: Product[];
-  addToCart: (item: Product) => void;
+  cartItems: CartProduct[];
+  addToCart: (item: CartProduct) => void;
   showHideCart: () => void;
   removeItem: (id: string) => void;
 }
@@ -18,14 +17,14 @@ const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const initialState: CartContextProps = {
     showCart: false,
     cartItems: [],
-    addToCart: (item: Product) => {},
+    addToCart: (item: CartProduct) => {},
     showHideCart: () => {},
     removeItem: (id: string) => {},
   };
 
   const [state, dispatch] = useReducer(CartReducer, initialState);
 
-  const addToCart = (item: Product): void => {
+  const addToCart = (item: CartProduct): void => {
     dispatch({ type: ADD_TO_CART, payload: item });
   };
 

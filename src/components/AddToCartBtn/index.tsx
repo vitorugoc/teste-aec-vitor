@@ -2,6 +2,7 @@ import "./styles.css"
 
 import { Product } from "../../data";
 import { useCart } from "../../hooks/cart/useCart";
+import { CartProduct } from "../../context/cart/CartReducer";
 
 
 interface AddToCartBtnProps {
@@ -12,7 +13,11 @@ const AddToCartBtn: React.FC<AddToCartBtnProps> = ({ product }) => {
     const { addToCart } = useCart();
 
     const handleAddToCart = () => {
-        addToCart(product);
+        const cartProduct: CartProduct = {
+            ...product,
+            numInCart: 0,
+        };
+        addToCart(cartProduct);
     };
 
     return (

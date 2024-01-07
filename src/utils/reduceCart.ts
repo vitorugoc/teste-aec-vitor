@@ -1,7 +1,7 @@
-import { Product } from "../data"
+import { CartProduct } from "../context/cart/CartReducer";
 
-const reduceCart = (cartItems: Product[]): number => {
-    const cartAmount = cartItems.reduce((amount, item) => item.price + amount, 0);
+const reduceCart = (cartItems: CartProduct[]): number => {
+    const cartAmount = cartItems.reduce((amount, item) => item.price * Math.ceil(item.numInCart/2) + amount, 0);
     return cartAmount;
 };
 

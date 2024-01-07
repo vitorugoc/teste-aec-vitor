@@ -103,5 +103,5 @@ interface Product {
   ];
   
 export default products;
-export type {Product};
+export type { Product };
   
