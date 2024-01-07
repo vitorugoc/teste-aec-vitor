@@ -1,0 +1,19 @@
+.addToCartBtn__button {
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: #ffa430;
+    border: none;
+    transition: all 0.2s ease-in;
+}
+
+.addToCartBtn__button:hover {
+    color: white;
+    background-color: #f1b668;
+    transform: translate(2px, -2px);
+}
+
+.addToCartBtn__button:focus,
+.addToCartBtn__button:active {
+    outline: none;
+}

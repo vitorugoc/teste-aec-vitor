@@ -1,21 +1,17 @@
-import React from 'react';
 import './styles.css';
+
+import React from 'react';
+
 import { Product } from '../../data';
-import { useCart } from '../../hooks/cart/useCart';
 import { useDetailsModal } from '../../hooks/detailsModal/useDetailsModal';
+import AddToCartBtn from '../AddToCartBtn';
 
 interface ProductDetailsProps {
     product: Product;
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
-    const { addToCart } = useCart();
     const { isModalOpen, changeDetailModalVisibility } = useDetailsModal();
-
-    const handleAddToCart = () => {
-        addToCart(product);
-    };
-
 
     return (
         <>
@@ -33,7 +29,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
                                 <li key={index}>{comment}</li>
                             ))}
                         </ul>
-                        <button onClick={handleAddToCart}>Adicionar ao carrinho</button>
+                        <AddToCartBtn product={product}/>
                     </div>
                 </div>
             )}

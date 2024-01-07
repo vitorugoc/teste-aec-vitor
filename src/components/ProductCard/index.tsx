@@ -3,24 +3,19 @@ import "./styles.css"
 import formatCurrency from "../../utils/formatCurrency";
 import Rating from "../Rating";
 import { Product } from "../../data";
-import { useCart } from "../../hooks/cart/useCart";
 import { useDetailsModal } from "../../hooks/detailsModal/useDetailsModal";
+import AddToCartBtn from "../AddToCartBtn";
 
 interface ProductCardProps {
     product: Product;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-    const { addToCart } = useCart();
     const { changeDetailModalVisibility } = useDetailsModal();
-
-    const handleAddToCart = () => {
-        addToCart(product);
-    };
 
     return (
         <div className="productCard__wrapper">
-            <div style={{cursor: "pointer"}} onClick={changeDetailModalVisibility}>
+            <div style={{ cursor: "pointer" }} onClick={changeDetailModalVisibility}>
                 <img className="productCard__img" src={product.image} alt="" />
                 <h4>{product.name}</h4>
                 <div>
@@ -34,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                     />
                 </div>
             </div>
-                <button className="productCard__button" onClick={handleAddToCart}>Adicionar ao carrinho</button>
+            <AddToCartBtn product={product} />
         </div>
     );
 };
