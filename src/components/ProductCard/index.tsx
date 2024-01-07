@@ -4,7 +4,7 @@ import formatCurrency from "../../utils/formatCurrency";
 import Rating from "../Rating";
 import { Product } from "../../data";
 import { useCart } from "../../hooks/cart/useCart";
-import { useState } from "react";
+import { useDetailsModal } from "../../hooks/detailsModal/useDetailsModal";
 
 interface ProductCardProps {
     product: Product;
@@ -12,15 +12,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     const { addToCart } = useCart();
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+    const { setIsModalOpen } = useDetailsModal();
 
     const handleAddToCart = () => {
         addToCart(product);
@@ -28,8 +20,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
     return (
         <div className="productCard__wrapper">
-            <div>
-                <img className="productCard__img" src={product.image} alt="" onClick={openModal} />
+            <div style={{cursor: "pointer"}} onClick={setIsModalOpen}>
+                <img className="productCard__img" src={product.image} alt="" />
                 <h4>{product.name}</h4>
                 <div>
                     <h5>{formatCurrency(product.price)}</h5>
@@ -41,25 +33,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                         color="#FFA41C"
                     />
                 </div>
-                <button className="productCard__button" onClick={handleAddToCart}>Adicionar ao carrinho</button>
             </div>
-            {isModalOpen && (
-                <div className="modalOverlay" onClick={closeModal}>
-                    <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-                        <span className="closeButton" onClick={closeModal}>
-                            &times;
-                        </span>
-                        <h2>{product.name}</h2>
-                        <p>{product.description}</p>
-
-                        <ul>
-                            {product.reviews.map((comment, index) => (
-                                <li key={index}>{comment}</li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-            )}
+                <button className="productCard__button" onClick={handleAddToCart}>Adicionar ao carrinho</button>
         </div>
     );
 };

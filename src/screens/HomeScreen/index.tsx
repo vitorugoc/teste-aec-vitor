@@ -1,8 +1,12 @@
-import React from 'react';
 import "./styles.css";
+
+import React from 'react';
+
 import { Product } from '../../data';
 import ProductCard from "../../components/ProductCard";
 import { useFilterProducts } from "../../hooks/filterProducts/useFilterProducts";
+import ProductDetails from '../../components/ProductDetails';
+import DetailsModalProvider from "../../context/detailsModal/DetailsModalContext";
 
 interface HomeScreenProps {
 
@@ -16,10 +20,16 @@ const HomeScreen: React.FC<HomeScreenProps> = () => {
   return (
     <div className="products__wrapper">
       {productsToRender.map((product: Product) => (
-        <ProductCard
-          key={product._id}
-          product={product}
-        />
+        <DetailsModalProvider>
+          <ProductCard
+            key={product._id}
+            product={product}
+          />
+          <ProductDetails
+            key={product._id}
+            product={product}
+          />
+        </DetailsModalProvider>
       ))}
     </div>
   );
