@@ -18,6 +18,73 @@
     border-radius: 8px;
     position: relative;
     z-index: 1;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.productDetails__img {
+    object-fit: cover;
+    flex-shrink: 1;
+    width: 90%;
+    height: 400px;
+    margin: auto;
+    display: block;
+}
+
+.productDetails__header {
+    margin-bottom: 20px;
+}
+
+.productDetails__paymentInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.productDetails__paymentInfo h2 {
+    color: green;
+}
+
+.productDetails__reviewWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.productDetails__reviewWrapper h5 {
+    margin-right: 5px;
+}
+
+.productDetails__reviewContainer li {
+    display: block;
+    margin-bottom: -40px;
+}
+
+.productDetails__reviewHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.productDetails__description {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.productDetails__description span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.productDetails__description p {
+    text-align: justify;
 }
 
 .productDetails__closeButton {
