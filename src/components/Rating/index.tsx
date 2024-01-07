@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 interface RatingProps {
     value: number;
-    text: string;
+    text?: string;
     color: string;
 }
 
@@ -27,7 +27,7 @@ const Rating: React.FC<RatingProps> = ({ value, text, color }) => {
 };
 
 Rating.defaultProps = {
-    color: "#FFA41C"
+    color: "#FFA41C",
 }
 
 export default Rating;

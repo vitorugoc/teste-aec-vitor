@@ -5,6 +5,7 @@ import React from 'react';
 import { Product } from '../../data';
 import { useDetailsModal } from '../../hooks/detailsModal/useDetailsModal';
 import AddToCartBtn from '../AddToCartBtn';
+import Rating from '../Rating';
 
 interface ProductDetailsProps {
     product: Product;
@@ -26,10 +27,17 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
                         <ul>
                             {product.reviews.map((comment, index) => (
-                                <li key={index}>{comment}</li>
+                                <div className='productDetails__reviewWrapper'>
+                                    <h5 key={index}>{comment.author}</h5>
+                                    <li key={index}>{comment.text}</li>
+                                    <Rating 
+                                        value={product.rating}
+                                        color={"#FFA41C"}
+                                    />
+                                </div>
                             ))}
                         </ul>
-                        <AddToCartBtn product={product}/>
+                        <AddToCartBtn product={product} />
                     </div>
                 </div>
             )}
