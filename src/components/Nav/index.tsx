@@ -1,6 +1,9 @@
 import "./styles.css"
 
+import { ChangeEvent } from "react";
+
 import { useCart } from "../../hooks/cart/useCart";
+import { useFilterProducts } from "../../hooks/filterProducts/useFilterProducts";
 
 interface NavProps {
 
@@ -8,14 +11,24 @@ interface NavProps {
 
 const Nav: React.FC<NavProps> = () => {
     const { cartItems, showHideCart } = useCart();
+    const { setSearchValue, filterProducts } = useFilterProducts();
+
+    const handleSearchValueChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const { value } = e.target;
+        setSearchValue(value);
+    }
 
     return (
         <nav>
             <div className="nav__left">Loja</div>
             <div className="nav__middle">
                 <div className="input__wrapper">
-                    <input type="text" />
-                    <i className="fas fa-search" />
+                    <input type="text" onChange={handleSearchValueChange} />
+                    <i
+                        className="fas fa-search"
+                        style={{ cursor: 'pointer' }}
+                        onClick={filterProducts}
+                    />
                 </div>
             </div>
             <div className="nav__right">

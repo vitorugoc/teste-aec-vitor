@@ -9,7 +9,7 @@ interface FilterProductsState {
 
 type FilterProductsAction =
     | { type: typeof SET_SEARCH_VALUE; payload: string }
-    | { type: typeof FILTER_POSTS; payload: string | Product[] };
+    | { type: typeof FILTER_POSTS; payload: any };
 
 const FilterProductsReducer = (state: FilterProductsState, action: FilterProductsAction): FilterProductsState => {
     switch (action.type) {
@@ -23,13 +23,11 @@ const FilterProductsReducer = (state: FilterProductsState, action: FilterProduct
             const { searchValue } = state;
             let filteredProducts: Product[] = [];
 
-            if (Array.isArray(action.payload) && action.payload.length > 0 && typeof action.payload[0] === 'object') {
-                filteredProducts = searchValue !== ""
-                    ? (action.payload as Product[]).filter((product: Product) =>
-                        product.name.toLowerCase().includes(searchValue.toLowerCase())
-                    )
-                    : state.allProducts;
-            }
+            filteredProducts = searchValue !== ""
+                ? (state.allProducts as Product[]).filter((product: Product) =>
+                    product.name.toLowerCase().includes(searchValue.toLowerCase())
+                )
+                : state.allProducts;
 
             return { ...state, filteredProducts: filteredProducts };
 

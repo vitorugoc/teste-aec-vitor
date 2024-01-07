@@ -1,17 +1,19 @@
-import React from 'react';
 import HomeScreen from './screens/HomeScreen';
 import Nav from './components/Nav';
 import CartProvider from './context/cart/CartContext';
 import Cart from './components/Cart';
+import FilterProductsProvider from './context/filterPosts/FilterPostsContext';
 
 
 function App() {
   return (
     <div className="App">
       <CartProvider>
-        <Nav />
+        <FilterProductsProvider>
+          <Nav />
+          <HomeScreen />
+        </FilterProductsProvider>
         <Cart />
-        <HomeScreen />
       </CartProvider>
     </div>
   );

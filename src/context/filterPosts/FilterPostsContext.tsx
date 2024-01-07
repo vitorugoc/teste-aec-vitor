@@ -10,7 +10,7 @@ interface FilterProductsContextProps {
     filteredProducts: Product[];
     allProducts: Product[];
     setSearchValue: (searchValue: string) => void;
-    filterProducts: (item: Product[]) => void;
+    filterProducts: () => void;
 }
 
 export const FilterProductsContext = createContext<FilterProductsContextProps | undefined>(undefined);
@@ -21,7 +21,7 @@ const FilterProductsProvider: React.FC<{ children: ReactNode }> = ({ children })
         filteredProducts: [],
         allProducts: products,
         setSearchValue: (searchValue: string) => { },
-        filterProducts: (item: Product[]) => { },
+        filterProducts: () => { },
     };
 
     const [state, dispatch] = useReducer(FilterProductsReducer, initialState);
@@ -30,8 +30,8 @@ const FilterProductsProvider: React.FC<{ children: ReactNode }> = ({ children })
         dispatch({ type: SET_SEARCH_VALUE, payload: searchValue });
     };
 
-    const filterProducts = (post: Product[]): void => {
-        dispatch({ type: FILTER_POSTS, payload: post });
+    const filterProducts = (): void => {
+        dispatch({ type: FILTER_POSTS, payload: null });
     };
 
     return (
