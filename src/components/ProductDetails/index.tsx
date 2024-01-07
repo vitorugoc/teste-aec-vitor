@@ -1,7 +1,5 @@
 import './styles.css';
-
 import React from 'react';
-
 import { Product } from '../../data';
 import { useDetailsModal } from '../../hooks/detailsModal/useDetailsModal';
 import AddToCartBtn from '../AddToCartBtn';
@@ -47,17 +45,17 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
                         <ul>
                             <span className='productDetails__reviewHeader'>VEJA AS AVALIAÇÕES DO PRODUTO</span>
                             {product.reviews.map((comment, index) => (
-                                <div className='productDetails__reviewContainer'>
+                                <div className='productDetails__reviewContainer' key={`review-${index}`}>
                                     <hr />
                                     <div className='productDetails__reviewWrapper'>
-                                        <h5 key={index}>{comment.author}</h5>
+                                        <h5>{comment.author}</h5>
                                         <Rating
                                             value={comment.rating}
                                             color={"#FFA41C"}
                                         />
                                     </div>
 
-                                    <li key={index}>{comment.text}</li>
+                                    <li key={`comment-${index}`}>{comment.text}</li>
                                 </div>
                             ))}
                         </ul>
