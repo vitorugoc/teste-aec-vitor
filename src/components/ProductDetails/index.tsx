@@ -16,9 +16,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     return (
         <>
             {isModalOpen && (
-                <div className="modal__Overlay" onClick={changeDetailModalVisibility}>
-                    <div className="modal__Content" onClick={(e) => e.stopPropagation()}>
-                        <span className="closeButton" onClick={changeDetailModalVisibility}>
+                <div className="productDetails__overlay" onClick={changeDetailModalVisibility}>
+                    <div className="productDetails__content" onClick={(e) => e.stopPropagation()}>
+                        <span className="productDetails__closeButton" onClick={changeDetailModalVisibility}>
                             &times;
                         </span>
                         <h2>{product.name}</h2>

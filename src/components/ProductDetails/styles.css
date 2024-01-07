@@ -1,4 +1,4 @@
-.modal__Overlay {
+.productDetails__overlay {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal__Content {
+.productDetails__content {
     background-color: #fff;
     padding: 20px;
     max-width: 600px;
@@ -20,7 +20,7 @@
     z-index: 1;
 }
 
-.closeButton {
+.productDetails__closeButton {
     position: absolute;
     top: 10px;
     right: 10px;
