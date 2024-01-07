@@ -47,6 +47,12 @@
     color: green;
 }
 
+.productDetails__reviewContainer li {
+    list-style: none;
+    margin-top: 5px;
+    margin-bottom: 20px;
+ }
+
 .productDetails__reviewWrapper {
     display: flex;
     flex-direction: row;
@@ -58,10 +64,6 @@
     margin-right: 5px;
 }
 
-.productDetails__reviewContainer li {
-    display: block;
-    margin-bottom: -40px;
-}
 
 .productDetails__reviewHeader {
     display: flex;
