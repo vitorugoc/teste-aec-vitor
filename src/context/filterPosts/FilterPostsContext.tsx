@@ -1,48 +1,52 @@
 import { createContext, ReactNode, useReducer } from "react";
-import FilterPostsReducer from "./FilterPostsReducer";
+import FilterProductsReducer from "./FilterProductsReducer";
 
 import { Product } from "../../data";
 import { SET_SEARCH_VALUE, FILTER_POSTS } from "../Types";
+import products from "../../data";
 
-interface FilterPostsContextProps {
+interface FilterProductsContextProps {
     searchValue: string;
-    filteredPosts: Product[];
+    filteredProducts: Product[];
+    allProducts: Product[];
     setSearchValue: (searchValue: string) => void;
-    filterPosts: (post: Product[]) => void;
+    filterProducts: (item: Product[]) => void;
 }
 
-export const FilterPostsContext = createContext<FilterPostsContextProps | undefined>(undefined);
+export const FilterProductsContext = createContext<FilterProductsContextProps | undefined>(undefined);
 
-const FilterProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-    const initialState: FilterPostsContextProps = {
+const FilterProductsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+    const initialState: FilterProductsContextProps = {
         searchValue: "",
-        filteredPosts: [],
+        filteredProducts: [],
+        allProducts: products,
         setSearchValue: (searchValue: string) => { },
-        filterPosts: (item: Product[]) => { },
+        filterProducts: (item: Product[]) => { },
     };
 
-    const [state, dispatch] = useReducer(FilterPostsReducer, initialState);
+    const [state, dispatch] = useReducer(FilterProductsReducer, initialState);
 
     const setSearchValue = (searchValue: string): void => {
         dispatch({ type: SET_SEARCH_VALUE, payload: searchValue });
     };
 
-    const filterPosts = (post: Product[]): void => {
+    const filterProducts = (post: Product[]): void => {
         dispatch({ type: FILTER_POSTS, payload: post });
     };
 
     return (
-        <FilterPostsContext.Provider
+        <FilterProductsContext.Provider
             value={{
                 searchValue: state.searchValue,
-                filteredPosts: state.filteredPosts,
+                filteredProducts: state.filteredProducts,
+                allProducts: state.allProducts,
                 setSearchValue,
-                filterPosts,
+                filterProducts,
             }}
         >
             {children}
-        </FilterPostsContext.Provider>
+        </FilterProductsContext.Provider>
     );
 };
 
-export default FilterProvider;
+export default FilterProductsProvider;

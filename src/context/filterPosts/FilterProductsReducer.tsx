@@ -1,16 +1,17 @@
 import { SET_SEARCH_VALUE, FILTER_POSTS } from "../Types";
 import { Product } from "../../data";
 
-interface FilterPostsState {
+interface FilterProductsState {
     searchValue: string;
-    filteredPosts: Product[];
+    filteredProducts: Product[];
+    allProducts: Product[];
 }
 
-type FilterPostsAction =
+type FilterProductsAction =
     | { type: typeof SET_SEARCH_VALUE; payload: string }
     | { type: typeof FILTER_POSTS; payload: string | Product[] };
 
-const FilterPostsReducer = (state: FilterPostsState, action: FilterPostsAction): FilterPostsState => {
+const FilterProductsReducer = (state: FilterProductsState, action: FilterProductsAction): FilterProductsState => {
     switch (action.type) {
         case SET_SEARCH_VALUE:
             let searchPayload: string = "";
@@ -27,14 +28,14 @@ const FilterPostsReducer = (state: FilterPostsState, action: FilterPostsAction):
                     ? (action.payload as Product[]).filter((product: Product) =>
                         product.name.toLowerCase().includes(searchValue.toLowerCase())
                     )
-                    : action.payload;
+                    : state.allProducts;
             }
 
-            return { ...state, filteredPosts: filteredProducts };
+            return { ...state, filteredProducts: filteredProducts };
 
         default:
             return state;
     }
 };
 
-export default FilterPostsReducer;
+export default FilterProductsReducer;
