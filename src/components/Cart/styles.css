@@ -24,6 +24,7 @@
   .fa-times-circle {
     color: gray;
     transition: transform 0.2s linear;
+    margin-bottom: 10px;
   }
   
   .fa-times-circle:hover {
