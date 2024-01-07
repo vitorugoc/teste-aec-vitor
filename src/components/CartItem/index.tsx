@@ -21,7 +21,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
             <div>
                 {item.name} {formatCurrency(item.price)}
             </div>
-            <button className="cardItem__button" onClick={handleRemoveItem}>Remover Produto</button>
+            <button className="cardItem__button" onClick={handleRemoveItem}>Remover</button>
         </li>
     );
 };

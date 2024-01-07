@@ -7,7 +7,7 @@ interface NavProps {
 }
 
 const Nav: React.FC<NavProps> = () => {
-    const { cartItems } = useCart();
+    const { cartItems, showHideCart } = useCart();
 
     return (
         <nav>
@@ -20,7 +20,11 @@ const Nav: React.FC<NavProps> = () => {
             </div>
             <div className="nav__right">
                 <div className="cart__icon">
-                    <i className="fa fa-shopping-cart" aria-hidden="true" />
+                    <i
+                        className="fa fa-shopping-cart"
+                        aria-hidden="true"
+                        onClick={showHideCart}
+                    />
                     {cartItems.length > 0 && (
                         <div className="item__count">
                             <span>{cartItems.length}</span>
