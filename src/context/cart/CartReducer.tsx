@@ -9,7 +9,7 @@ interface CartState {
 type CartAction =
   | { type: typeof SHOW_HIDE_CART; payload: any }
   | { type: typeof ADD_TO_CART; payload: Product }
-  | { type: typeof REMOVE_ITEM; payload: number };
+  | { type: typeof REMOVE_ITEM; payload: string };
 
 const CartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {

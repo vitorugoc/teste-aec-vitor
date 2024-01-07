@@ -9,7 +9,7 @@ interface CartContextProps {
   cartItems: Product[];
   addToCart: (item: Product) => void;
   showHideCart: () => void;
-  removeItem: (id: number) => void;
+  removeItem: (id: string) => void;
 }
 
 export const CartContext = createContext<CartContextProps | undefined>(undefined);
@@ -20,7 +20,7 @@ const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     cartItems: [],
     addToCart: (item: Product) => {},
     showHideCart: () => {},
-    removeItem: (id: number) => {},
+    removeItem: (id: string) => {},
   };
 
   const [state, dispatch] = useReducer(CartReducer, initialState);
@@ -33,7 +33,7 @@ const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     dispatch({ type: SHOW_HIDE_CART, payload: null });
   };
 
-  const removeItem = (id: number): void => {
+  const removeItem = (id: string): void => {
     dispatch({ type: REMOVE_ITEM, payload: id });
   };
 

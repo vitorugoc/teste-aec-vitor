@@ -7,6 +7,7 @@ import { useCart } from "../../hooks/cart/useCart";
 
 import formatCurrency from "../../utils/formatCurrency";
 import reduceCart from "../../utils/reduceCart";
+import CartItem from "../CartItem";
 
 interface CartProps {
 
@@ -32,12 +33,12 @@ const Cart: React.FC<CartProps> = () => {
                             ? (<h4>Carrinho Vazio</h4>)
                             : (
                                 <ul>
-                                    {/* {cartItems.map(item => (
+                                    {cartItems.map(item => (
                                         <CartItem
                                             key={item._id}
                                             item={item}
                                         />
-                                    ))} */}
+                                    ))}
                                 </ul>
                             )}
                     </div>
