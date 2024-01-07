@@ -5,6 +5,8 @@ interface Product {
     price: number;
     rating: number;
     numReviews: number;
+    description: string;
+    reviews: string[];
   }
   
   const products: Product[] = [
@@ -16,6 +18,8 @@ interface Product {
       price: 6850.00,
       rating: 4.5,
       numReviews: 12,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla. Donec vestibulum eget quam eget volutpat. Sed odio magna, luctus vel interdum vel, feugiat id lacus. Vestibulum tellus ligula, venenatis non iaculis id, ultrices eget ante. Fusce consequat metus eu arcu bibendum, sed ultrices mi placerat. Nunc eu mauris pulvinar lacus pretium euismod. Etiam consequat imperdiet augue, in elementum nisl imperdiet ac. Curabitur sed mi quis sem eleifend vestibulum vitae in purus. In diam nisi, tincidunt in sem nec, consequat egestas quam. Nulla ultricies ipsum elit, ullamcorper pellentesque massa lacinia fringilla. Vestibulum placerat, massa et sodales congue, neque quam vulputate tellus, nec suscipit sapien neque id nibh. Sed dapibus molestie risus et finibus. Sed sit amet odio risus. Quisque rutrum dignissim metus vel semper.",
+      reviews: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla.", "Duis molestie lobortis diam in mollis. Vivamus erat sapien, placerat quis eros vel, congue tristique tellus. Praesent dictum dui rutrum enim tempor lacinia. Morbi cursus sed lectus ut condimentum."]
     },
     {
       _id: "2",
@@ -25,6 +29,8 @@ interface Product {
       price: 150.99,
       rating: 0.5,
       numReviews: 8,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla. Donec vestibulum eget quam eget volutpat. Sed odio magna, luctus vel interdum vel, feugiat id lacus. Vestibulum tellus ligula, venenatis non iaculis id, ultrices eget ante. Fusce consequat metus eu arcu bibendum, sed ultrices mi placerat. Nunc eu mauris pulvinar lacus pretium euismod. Etiam consequat imperdiet augue, in elementum nisl imperdiet ac. Curabitur sed mi quis sem eleifend vestibulum vitae in purus. In diam nisi, tincidunt in sem nec, consequat egestas quam. Nulla ultricies ipsum elit, ullamcorper pellentesque massa lacinia fringilla. Vestibulum placerat, massa et sodales congue, neque quam vulputate tellus, nec suscipit sapien neque id nibh. Sed dapibus molestie risus et finibus. Sed sit amet odio risus. Quisque rutrum dignissim metus vel semper.",
+      reviews: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla.", "Duis molestie lobortis diam in mollis. Vivamus erat sapien, placerat quis eros vel, congue tristique tellus. Praesent dictum dui rutrum enim tempor lacinia. Morbi cursus sed lectus ut condimentum."]
     },
     {
       _id: "3",
@@ -34,6 +40,8 @@ interface Product {
       price: 2969.99,
       rating: 3,
       numReviews: 12,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla. Donec vestibulum eget quam eget volutpat. Sed odio magna, luctus vel interdum vel, feugiat id lacus. Vestibulum tellus ligula, venenatis non iaculis id, ultrices eget ante. Fusce consequat metus eu arcu bibendum, sed ultrices mi placerat. Nunc eu mauris pulvinar lacus pretium euismod. Etiam consequat imperdiet augue, in elementum nisl imperdiet ac. Curabitur sed mi quis sem eleifend vestibulum vitae in purus. In diam nisi, tincidunt in sem nec, consequat egestas quam. Nulla ultricies ipsum elit, ullamcorper pellentesque massa lacinia fringilla. Vestibulum placerat, massa et sodales congue, neque quam vulputate tellus, nec suscipit sapien neque id nibh. Sed dapibus molestie risus et finibus. Sed sit amet odio risus. Quisque rutrum dignissim metus vel semper.",
+      reviews: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla.", "Duis molestie lobortis diam in mollis. Vivamus erat sapien, placerat quis eros vel, congue tristique tellus. Praesent dictum dui rutrum enim tempor lacinia. Morbi cursus sed lectus ut condimentum."]
     },
     {
       _id: "4",
@@ -43,6 +51,8 @@ interface Product {
       price: 414.99,
       rating: 5,
       numReviews: 12,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla. Donec vestibulum eget quam eget volutpat. Sed odio magna, luctus vel interdum vel, feugiat id lacus. Vestibulum tellus ligula, venenatis non iaculis id, ultrices eget ante. Fusce consequat metus eu arcu bibendum, sed ultrices mi placerat. Nunc eu mauris pulvinar lacus pretium euismod. Etiam consequat imperdiet augue, in elementum nisl imperdiet ac. Curabitur sed mi quis sem eleifend vestibulum vitae in purus. In diam nisi, tincidunt in sem nec, consequat egestas quam. Nulla ultricies ipsum elit, ullamcorper pellentesque massa lacinia fringilla. Vestibulum placerat, massa et sodales congue, neque quam vulputate tellus, nec suscipit sapien neque id nibh. Sed dapibus molestie risus et finibus. Sed sit amet odio risus. Quisque rutrum dignissim metus vel semper.",
+      reviews: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla.", "Duis molestie lobortis diam in mollis. Vivamus erat sapien, placerat quis eros vel, congue tristique tellus. Praesent dictum dui rutrum enim tempor lacinia. Morbi cursus sed lectus ut condimentum."]
     },
     {
       _id: "5",
@@ -52,6 +62,8 @@ interface Product {
       price: 7999.99,
       rating: 5,
       numReviews: 10,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla. Donec vestibulum eget quam eget volutpat. Sed odio magna, luctus vel interdum vel, feugiat id lacus. Vestibulum tellus ligula, venenatis non iaculis id, ultrices eget ante. Fusce consequat metus eu arcu bibendum, sed ultrices mi placerat. Nunc eu mauris pulvinar lacus pretium euismod. Etiam consequat imperdiet augue, in elementum nisl imperdiet ac. Curabitur sed mi quis sem eleifend vestibulum vitae in purus. In diam nisi, tincidunt in sem nec, consequat egestas quam. Nulla ultricies ipsum elit, ullamcorper pellentesque massa lacinia fringilla. Vestibulum placerat, massa et sodales congue, neque quam vulputate tellus, nec suscipit sapien neque id nibh. Sed dapibus molestie risus et finibus. Sed sit amet odio risus. Quisque rutrum dignissim metus vel semper.",
+      reviews: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla.", "Duis molestie lobortis diam in mollis. Vivamus erat sapien, placerat quis eros vel, congue tristique tellus. Praesent dictum dui rutrum enim tempor lacinia. Morbi cursus sed lectus ut condimentum."]
     },
     {
       _id: "6",
@@ -61,6 +73,8 @@ interface Product {
       price: 2100.00,
       rating: 4,
       numReviews: 12,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla. Donec vestibulum eget quam eget volutpat. Sed odio magna, luctus vel interdum vel, feugiat id lacus. Vestibulum tellus ligula, venenatis non iaculis id, ultrices eget ante. Fusce consequat metus eu arcu bibendum, sed ultrices mi placerat. Nunc eu mauris pulvinar lacus pretium euismod. Etiam consequat imperdiet augue, in elementum nisl imperdiet ac. Curabitur sed mi quis sem eleifend vestibulum vitae in purus. In diam nisi, tincidunt in sem nec, consequat egestas quam. Nulla ultricies ipsum elit, ullamcorper pellentesque massa lacinia fringilla. Vestibulum placerat, massa et sodales congue, neque quam vulputate tellus, nec suscipit sapien neque id nibh. Sed dapibus molestie risus et finibus. Sed sit amet odio risus. Quisque rutrum dignissim metus vel semper.",
+      reviews: ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. In feugiat tellus ac massa cursus, vel mollis ex lobortis. Sed ante enim, mattis eu efficitur in, facilisis quis nulla.", "Duis molestie lobortis diam in mollis. Vivamus erat sapien, placerat quis eros vel, congue tristique tellus. Praesent dictum dui rutrum enim tempor lacinia. Morbi cursus sed lectus ut condimentum."]
     },
   ];
   
