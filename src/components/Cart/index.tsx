@@ -1,7 +1,9 @@
-import { useCart } from "../../hooks/cart/useCart";
 import React from "react";
 
 import "./styles.css";
+
+import { useCart } from "../../hooks/cart/useCart";
+
 
 import formatCurrency from "../../utils/formatCurrency";
 import reduceCart from "../../utils/reduceCart";

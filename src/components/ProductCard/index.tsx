@@ -1,8 +1,8 @@
 import "./styles.css"
 
 import formatCurrency from "../../utils/formatCurrency";
-import { Product } from "../../data";
 import Rating from "../Rating";
+import { Product } from "../../data";
 import { useCart } from "../../hooks/cart/useCart";
 
 interface ProductCardProps {
