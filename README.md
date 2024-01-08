@@ -16,7 +16,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 
 1. **Clone o Repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   git clone git@github.com:vitorugoc/teste-aec-vitor.git
    cd nome-do-repositorio
    ```
 
