@@ -20,7 +20,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
    cd teste-aec-vitor
    ```
 
-2. **Instale as Dependências:**
+2. **Instale as Dependências: (Esse passo pode ser ignorado caso queira executar apenas pelo Docker)** 
    ```bash
    npm install
    ```
