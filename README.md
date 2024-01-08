@@ -17,7 +17,7 @@ Certifique-se de ter as seguintes ferramentas instaladas:
 1. **Clone o Repositório:**
    ```bash
    git clone git@github.com:vitorugoc/teste-aec-vitor.git
-   cd nome-do-repositorio
+   cd teste-aec-vitor
    ```
 
 2. **Instale as Dependências:**
