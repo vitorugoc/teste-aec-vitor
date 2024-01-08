@@ -16,12 +16,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     return (
         <div className="productCard__wrapper">
             <div style={{ cursor: "pointer" }} onClick={changeDetailModalVisibility}>
-                <img className="productCard__img" src={product.image} alt="" />
+                <img className="productCard__img" src={product.image} alt={product.name} />
                 <h4>{product.name}</h4>
                 <div>
                     <h5>{formatCurrency(product.price)}</h5>
                 </div>
-                <div className="productCard__rating">
+                <div className="productCard__rating" data-testid='rating-text'>
                     <Rating
                         value={product.rating}
                         text={`${product.numReviews} reviews`}

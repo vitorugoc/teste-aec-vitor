@@ -3,17 +3,10 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Nav from './index';
 import { useCart } from '../../hooks/cart/useCart';
-import { useFilterProducts } from '../../hooks/filterProducts/useFilterProducts';
 
 const mockUseCart = useCart as jest.MockedFunction<typeof useCart>;
-const mockUseFilterProducts = useFilterProducts as jest.MockedFunction<typeof useFilterProducts>;
 
 jest.mock('../../hooks/cart/useCart');
-jest.mock('../../hooks/filterProducts/useFilterProducts', () => ({
-    ...jest.requireActual('../../hooks/filterProducts/useFilterProducts'),
-    setSearchValue: jest.fn(),
-    filterProducts: jest.fn(),
-  }));
 
 describe('Nav component', () => {
     it('renders cart icon with item count when cart has items', () => {
