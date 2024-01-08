@@ -2,6 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import ProductCard from './index';
 import { useDetailsModal } from '../../hooks/detailsModal/useDetailsModal';
+import { CartProduct } from '../../context/cart/CartReducer';
 
 const mockUseDetailsModal = useDetailsModal as jest.MockedFunction<typeof useDetailsModal>;
 
@@ -12,7 +13,7 @@ jest.mock('../AddToCartBtn', () => ({
   default: jest.fn(() => null),
 }));
 
-const sampleProduct = {
+const sampleProduct:CartProduct = {
   _id: '1',
   name: 'Câmera Sony Compacta',
   numInCart: 1,
