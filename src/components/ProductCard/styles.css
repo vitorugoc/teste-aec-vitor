@@ -5,6 +5,7 @@
     border-radius: 12px;
     margin: auto;
     word-wrap: break-word;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .productCard__img {
@@ -19,8 +20,9 @@
     margin: 20px 0;
 }
 
-.ProductCard__price {
-    margin: 20px 0;
+.productCard__img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 1147px) {
@@ -34,3 +36,5 @@
         width: 90%;
     }
 }
+
+
