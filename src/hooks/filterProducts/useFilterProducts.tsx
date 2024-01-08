@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FilterProductsContext } from "../../context/filterPosts/FilterPostsContext";
+import { FilterProductsContext } from "../../context/filterPosts/FilterProductsContext";
 
 import products from "../../data";
 

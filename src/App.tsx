@@ -2,7 +2,7 @@ import HomeScreen from './screens/HomeScreen';
 import Nav from './components/Nav';
 import CartProvider from './context/cart/CartContext';
 import Cart from './components/Cart';
-import FilterProductsProvider from './context/filterPosts/FilterPostsContext';
+import FilterProductsProvider from './context/filterPosts/FilterProductsContext';
 
 
 function App() {

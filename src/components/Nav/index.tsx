@@ -25,6 +25,7 @@ const Nav: React.FC<NavProps> = () => {
                 <div className="input__wrapper">
                     <input type="text" onChange={handleSearchValueChange} />
                     <i
+                        data-testid="search-icon"
                         className="fas fa-search"
                         style={{ cursor: 'pointer' }}
                         onClick={filterProducts}
@@ -32,8 +33,9 @@ const Nav: React.FC<NavProps> = () => {
                 </div>
             </div>
             <div className="nav__right">
-                <div className="cart__icon">
+                <div className="cart__icon" >
                     <i
+                        data-testid="cart-icon"
                         className="fa fa-shopping-cart"
                         aria-hidden="true"
                         onClick={showHideCart}
