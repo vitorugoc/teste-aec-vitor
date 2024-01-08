@@ -17,7 +17,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 
     return (
         <li className="cartItem__item">
-            <img src={item.image} alt="" />
+            <img src={item.image} alt={item.name} />
             <div className="item-info">
                 <div>{item.name}</div>
                 <div>{formatCurrency(item.price)} {`${Math.ceil(item.numInCart / 2)}x`}</div>
