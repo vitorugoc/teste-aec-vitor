@@ -65,11 +65,3 @@ npm test
 ```
 
 Isso iniciará a execução dos testes e exibirá os resultados no console.
-
-## Contribuição
-
-Sinta-se à vontade para contribuir para este projeto. Certifique-se de seguir as [diretrizes de contribuição](CONTRIBUTING.md) e criar issues para discutir alterações importantes.
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE.md).
