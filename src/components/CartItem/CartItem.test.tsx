@@ -4,7 +4,6 @@ import '@testing-library/jest-dom/extend-expect';
 import CartItem from './index';
 import { useCart } from '../../hooks/cart/useCart';
 import { CartContextProps } from '../../context/cart/CartContext';
-import formatCurrency from '../../utils/formatCurrency';
 
 const mockUseCart = useCart as jest.MockedFunction<typeof useCart>;
 
