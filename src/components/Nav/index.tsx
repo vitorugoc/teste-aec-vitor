@@ -18,17 +18,27 @@ const Nav: React.FC<NavProps> = () => {
         setSearchValue(value);
     }
 
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            filterProducts();
+        }
+    }
+
     return (
         <nav>
             <div className="nav__left">Loja</div>
             <div className="nav__middle">
                 <div className="input__wrapper">
-                    <input type="text" onChange={handleSearchValueChange} />
+                    <input type="text"
+                        onChange={handleSearchValueChange}
+                        onKeyDown={handleKeyDown} 
+                    />
                     <i
                         data-testid="search-icon"
                         className="fas fa-search"
                         style={{ cursor: 'pointer' }}
                         onClick={filterProducts}
+
                     />
                 </div>
             </div>
