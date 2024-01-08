@@ -22,6 +22,7 @@ const Cart: React.FC<CartProps> = () => {
                 <div className="cart__wrapper">
                     <div style={{ textAlign: 'right' }}>
                         <i
+                            data-testid="close-button"
                             style={{ cursor: 'pointer' }}
                             className="fa fa-times-circle"
                             aria-hidden='true'

@@ -52,3 +52,4 @@ const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 export default CartProvider;
+export type { CartContextProps };
